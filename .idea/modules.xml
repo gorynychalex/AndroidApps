@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MyApplication2.iml" filepath="$PROJECT_DIR$/MyApplication2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app01helloworld/app01helloworld.iml" filepath="$PROJECT_DIR$/app01helloworld/app01helloworld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app02calculate/app.iml" filepath="$PROJECT_DIR$/app02calculate/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app03intent/app03.iml" filepath="$PROJECT_DIR$/app03intent/app03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app04lifecycle/app04lifecycle.iml" filepath="$PROJECT_DIR$/app04lifecycle/app04lifecycle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/appmeasure/androidapp02.iml" filepath="$PROJECT_DIR$/appmeasure/androidapp02.iml" />
+    </modules>
+  </component>
+</project>
