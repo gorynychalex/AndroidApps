@@ -1,11 +1,14 @@
 package com.example.app04lifecycle;
 
+// https://developer.android.com/guide/components/activities.html#Lifecycle
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Метка для журналирования
     private static final String TAG = "Lifecycle";
 
     //Создание активности
