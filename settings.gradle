@@ -1,1 +1,1 @@
-include ':app02calculate', ':appmeasure', ':app03intent', ':app04lifecycle', ':app01helloworld'
+include ':app02calculate', ':appmeasure', ':app03intent', ':app04lifecycle', ':app01helloworld', ':app05listview', ':app06sharedpreferences', ':app07sqlite'

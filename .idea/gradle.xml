@@ -12,6 +12,9 @@
             <option value="$PROJECT_DIR$/app02calculate" />
             <option value="$PROJECT_DIR$/app03intent" />
             <option value="$PROJECT_DIR$/app04lifecycle" />
+            <option value="$PROJECT_DIR$/app05listview" />
+            <option value="$PROJECT_DIR$/app06sharedpreferences" />
+            <option value="$PROJECT_DIR$/app07sqlite" />
             <option value="$PROJECT_DIR$/appmeasure" />
           </set>
         </option>
