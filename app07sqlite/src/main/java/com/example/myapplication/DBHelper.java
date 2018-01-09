@@ -23,9 +23,11 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("create table " + TABLE_MAIN + "(" + TABLE_MAIN_ID + " integer primary key, "
+        sqLiteDatabase.execSQL("create table " + TABLE_MAIN + "("
+                + TABLE_MAIN_ID + " integer primary key, "
                 + TABLE_MAIN_TEXT + " text, "
-                + TABLE_MAIN_OPTIONS + " text " + ")" );
+                + TABLE_MAIN_OPTIONS + " text " + ")"
+        );
 //        "create table questions (id integer primary key, question_text text, question_options text"
     }
 
