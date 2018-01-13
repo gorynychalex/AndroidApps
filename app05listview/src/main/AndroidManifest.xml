@@ -21,7 +21,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActivityQuestion" />
+        <activity android:name=".QuestionActivity" android:label="Question Activity" />
+
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"></activity>

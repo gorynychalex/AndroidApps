@@ -5,17 +5,4 @@
     android:layout_width="match_parent"
     android:orientation="horizontal"
     android:layout_height="match_parent">
-
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="RadioButton" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        app:srcCompat="@android:drawable/btn_star" />
 </LinearLayout>
