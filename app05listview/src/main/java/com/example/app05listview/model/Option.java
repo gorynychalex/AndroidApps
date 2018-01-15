@@ -1,7 +1,7 @@
 package com.example.app05listview.model;
 
 /**
- * Created by user on 26.12.2017.
+ * Тип объектов: ВАРИАНТ ОТВЕТОВ
  */
 
 public class Option {
@@ -9,6 +9,10 @@ public class Option {
     private int id;
     private String text;
     private boolean correct;
+    private String pictureUrl;
+
+    public Option() {
+    }
 
     public Option(String text, boolean correct) {
         this.text = text;
@@ -29,5 +33,21 @@ public class Option {
 
     public void setCorrect(boolean correct) {
         this.correct = correct;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
     }
 }

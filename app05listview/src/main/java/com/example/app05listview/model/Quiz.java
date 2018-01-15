@@ -3,7 +3,7 @@ package com.example.app05listview.model;
 import java.util.List;
 
 /**
- * Created by user on 26.12.2017.
+ * Тип объектов: ТЕСТ
  */
 
 public class Quiz {
@@ -12,6 +12,13 @@ public class Quiz {
     private String name;
     private List<Question> question;
     private String pictureUrl;
+
+    public Quiz() {
+    }
+
+    public Quiz(String name) {
+        this.name = name;
+    }
 
     public Quiz(String name, List<Question> question) {
         this.name = name;

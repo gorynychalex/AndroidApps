@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/DVFUMRCPKAndroidApps.iml" filepath="$PROJECT_DIR$/DVFUMRCPKAndroidApps.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyApplication2.iml" filepath="$PROJECT_DIR$/MyApplication2.iml" />
       <module fileurl="file://C:\Users\user\AndroidStudioProjects\MyApplication2\appmeasure\androidapp02.iml" filepath="C:\Users\user\AndroidStudioProjects\MyApplication2\appmeasure\androidapp02.iml" />
       <module fileurl="file://C:\Users\user\AndroidStudioProjects\MyApplication2\app02calculate\app.iml" filepath="C:\Users\user\AndroidStudioProjects\MyApplication2\app02calculate\app.iml" />

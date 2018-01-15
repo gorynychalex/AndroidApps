@@ -10,13 +10,18 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.app05listview.data.QuizData;
+import com.example.app05listview.model.Quiz;
+
 public class MainActivity extends AppCompatActivity {
 
-    // Список тестов
-    public static String[] tests = new String[]{"Java", "Android", "Patterns"};
+    // Список тестов -> Замена на вывод списка из QuizData.class
+    // public static String[] tests = new String[]{"Java", "Android", "Patterns"};
+    private String[] tests;
 
     // Переменная для адаптера списка
     ArrayAdapter<String> adapter;
@@ -30,8 +35,13 @@ public class MainActivity extends AppCompatActivity {
     // Переменная для хранения выбора позиции
     int selectedPosition;
 
+    // Переменная для сохранения пункта
+    String testName;
+
     // Новое намерение
     Intent intent;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,13 +49,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Инициализация списка
-        listView = findViewById(R.id.list_view);
+        listView = (ListView) findViewById(R.id.list_view);
 
         // Кнопка выбора теста
-        button = findViewById(R.id.buttonChoose);
+        button = (Button) findViewById(R.id.buttonChoose);
 
-        // Инициализация адаптера
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_single_choice, getResources().getStringArray(R.array.tests));
+        // Генерация данных тестов
+        QuizData.setList();
+
+        // Инициализация начальных переменных для заполнения списка тестов
+        int i=0; tests = new String[QuizData.getQuizs().size()];
+
+        // Подготовка массива @список тестов из QuizData.class
+        for(Quiz quiz: QuizData.getQuizs()){
+            tests[i++] = quiz.getName();
+        }
+
+        // Инициализация адаптера с предустановленной разметкой пунктов
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, tests);
 
         // Назначение адаптера списку
         listView.setAdapter(adapter);
@@ -55,10 +76,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View itemClicked, int position,
                                     long id) {
-                Toast.makeText(getApplicationContext(), ((TextView) itemClicked).getText() + " , position = " + position, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),((TextView) itemClicked).getText() + " , position = " + position, Toast.LENGTH_SHORT).show();
                 Log.d("MainActivity", String.valueOf(position));
 
                 selectedPosition = position;
+
+                testName = ((TextView) itemClicked).getText().toString();
             }
         });
 
@@ -67,12 +90,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                // Инициализация намерения
+                // Инициализация намерения для вызова следующей активности
                 intent = new Intent(MainActivity.this, QuestionActivity.class);
 
-                Log.d("MainActivity", String.valueOf(selectedPosition));
-                // Передача параметра выбранной позиции в другое окно
+                // Передача параметров выбранной позиции и наименования в следующее окно
                 intent.putExtra("position", selectedPosition);
+                intent.putExtra("test", testName);
 
                 // Запуск новой активности
                 startActivity(intent);

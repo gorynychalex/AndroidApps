@@ -8,61 +8,66 @@
     android:layout_height="match_parent"
     tools:context="com.example.app05listview.QuestionActivity">
 
+
+    <include layout="@layout/header_quiz"/>
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         <TextView
-            android:text="Тест:"
-            android:layout_weight="0.5"
-            android:layout_width="match_parent"
+            android:textSize="16sp"
+            android:text="Вопрос # "
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/test_name"
-            android:layout_weight="0.5"
-            android:layout_width="match_parent"
+            android:text="1"
+            android:id="@+id/question_num"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
+        <TextView
+            android:text=":"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
-
     <TextView
-        android:textSize="16sp"
-        android:text="Вопрос:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:id="@+id/question_text"
+        android:text="текст вопроса"
+        android:layout_margin="10px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="700px">
-
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"></ListView>
-    </LinearLayout>
+    <ListView
+        android:id="@+id/list_view_questions"
+        android:layout_width="wrap_content"
+        android:layout_height="400px"
+        android:choiceMode="singleChoice"/>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
-            android:id="@+id/prev_question"
+            android:id="@+id/button_question_prev"
             android:text="Предыдущий"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <Button
-            android:id="@+id/next_question"
+            android:id="@+id/button_question_next"
             android:text="Следующий"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <Button
-            android:id="@+id/end_quiestion"
+            android:id="@+id/button_quiestion_finish"
             android:text="Закончить"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
 </LinearLayout>

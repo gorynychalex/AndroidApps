@@ -3,7 +3,7 @@ package com.example.app05listview.model;
 import java.util.List;
 
 /**
- * Created by user on 26.12.2017.
+ * Тип объектов: ВОПРОС
  */
 
 public class Question {
