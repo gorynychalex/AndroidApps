@@ -3,7 +3,11 @@ package ru.popovich.app09filesave;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.JsonReader;
 import android.util.Log;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -39,8 +43,10 @@ public class MainActivity extends AppCompatActivity {
         try {
             outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
             PrintWriter printWriter = new PrintWriter(outputStream);
-            printWriter.println("My first line");
-            printWriter.println("Second line");
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("first","First field");
+            jsonObject.put("second","Second field");
+            printWriter.write(jsonObject.toString());
             printWriter.close();
 
 //            outputStream.write("My text first line".getBytes());
@@ -54,13 +60,12 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+            JsonReader jsonReader = new JsonReader(bufferedReader);
+            jsonReader.beginObject();
 
-            String line;
-            StringBuilder builder = new StringBuilder();
-            while ((line=bufferedReader.readLine())!=null){
-                builder.append(line);
-                Log.d("MainActivity","Read From File: " + line);
-            }
+            while (jsonReader.hasNext()){
+                Log.d("MainActivity",jsonReader.nextName() + " : " + jsonReader.nextString());
+            };
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             Log.d("MainActivity", "FileNotFoundException");
@@ -68,7 +73,5 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
             Log.d("MainActivity", "IOException");
         }
-
-
     }
 }
