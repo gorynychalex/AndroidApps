@@ -2,7 +2,6 @@ package com.example.myapplication;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +11,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
+
+import com.example.myapplication.db.DBHelper;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -55,12 +56,9 @@ public class MainActivity extends AppCompatActivity {
         // Объект Cursor типа MAP-коллекция
         cursor = sqLiteDatabase.query(DBHelper.TABLE_QUIZ,null,null,null,null,null,null);
 
+        // Вывод данных из базы
         if(cursor.moveToFirst()) {
             do {
-                // Сохранение данных из БД в отдельный массив
-//                names.add(cursor.getString(1) + " " + cursor.getString(2));
-                // Сохранение индексов "_id" для запросов в базу
-//                idNames.add(cursor.getInt(0));
                 Log.d(TAG, "Cursor = " + cursor.getPosition() + ", ID = " + cursor.getInt(0) + " , " + DBHelper.TABLE_QUIZ_NAME + " = " + cursor.getString(1));
             } while (cursor.moveToNext());
         }

@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 /**
  * Simple project
- * Calculate:
+ * Calculate: last digit is odd
  */
 
 public class MainActivity extends AppCompatActivity {
