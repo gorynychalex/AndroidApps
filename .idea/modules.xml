@@ -7,6 +7,7 @@
       <module fileurl="file://C:\Users\user\AndroidStudioProjects\MyApplication2\appmeasure\androidapp02.iml" filepath="C:\Users\user\AndroidStudioProjects\MyApplication2\appmeasure\androidapp02.iml" />
       <module fileurl="file://C:\Users\user\AndroidStudioProjects\MyApplication2\app02calculate\app.iml" filepath="C:\Users\user\AndroidStudioProjects\MyApplication2\app02calculate\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app01helloworld/app01helloworld.iml" filepath="$PROJECT_DIR$/app01helloworld/app01helloworld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app021calculate/app021calculate.iml" filepath="$PROJECT_DIR$/app021calculate/app021calculate.iml" />
       <module fileurl="file://$PROJECT_DIR$/app02calculate/app02calculate.iml" filepath="$PROJECT_DIR$/app02calculate/app02calculate.iml" />
       <module fileurl="file://C:\Users\user\AndroidStudioProjects\MyApplication2\app03intent\app03.iml" filepath="C:\Users\user\AndroidStudioProjects\MyApplication2\app03intent\app03.iml" />
       <module fileurl="file://$PROJECT_DIR$/app03intent/app03intent.iml" filepath="$PROJECT_DIR$/app03intent/app03intent.iml" />
@@ -14,6 +15,8 @@
       <module fileurl="file://$PROJECT_DIR$/app05listview/app05listview.iml" filepath="$PROJECT_DIR$/app05listview/app05listview.iml" />
       <module fileurl="file://$PROJECT_DIR$/app06sharedpreferences/app06sharedpreferences.iml" filepath="$PROJECT_DIR$/app06sharedpreferences/app06sharedpreferences.iml" />
       <module fileurl="file://$PROJECT_DIR$/app07sqlite/app07sqlite.iml" filepath="$PROJECT_DIR$/app07sqlite/app07sqlite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app08services/app08services.iml" filepath="$PROJECT_DIR$/app08services/app08services.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app09filesave/app09filesave.iml" filepath="$PROJECT_DIR$/app09filesave/app09filesave.iml" />
       <module fileurl="file://$PROJECT_DIR$/appmeasure/appmeasure.iml" filepath="$PROJECT_DIR$/appmeasure/appmeasure.iml" />
       <module fileurl="file://C:\Users\user\AndroidStudioProjects\MyApplication2\app06sharedpreferences\myapplication.iml" filepath="C:\Users\user\AndroidStudioProjects\MyApplication2\app06sharedpreferences\myapplication.iml" />
     </modules>
