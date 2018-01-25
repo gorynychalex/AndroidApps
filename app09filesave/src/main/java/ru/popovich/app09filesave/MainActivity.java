@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
             Log.d(TAG, "FILE IS NOT EXIST! getAbsolutefile(): " + String.valueOf(file.getAbsoluteFile()));
         }
 
+
         // ЗАПИСЬ ДАННЫХ
         try {
             // Создание потока вывода
