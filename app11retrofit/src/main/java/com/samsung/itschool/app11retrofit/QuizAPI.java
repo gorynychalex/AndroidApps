@@ -1,6 +1,8 @@
 package com.samsung.itschool.app11retrofit;
 
 import com.samsung.itschool.app11retrofit.model.Question;
+import com.samsung.itschool.app11retrofit.model.Quiz;
+import com.samsung.itschool.app11retrofit.model.User;
 
 import java.util.List;
 
@@ -14,10 +16,19 @@ import retrofit2.http.Path;
 
 public interface QuizAPI {
 
-    @GET("rest/questrs/all")
+    @GET("rest/questrs/1")
+    Call<Quiz> getQuiz();
+
+    @GET("rest/questrs/quiz/questions")
     Call<List<Question>> getQuestions();
 
-    @GET("rest/questrs/{id}")
+    @GET("rest/questrs/quiz/{id}")
     Call<Question> getQuestionById(@Path("id") int id);
+
+    @GET("rest/questrs/user/{id}")
+    Call<User> getUserById(@Path("id") int id);
+
+    @GET("rest/questrs/users")
+    Call<List<User>> getUsers();
 
 }

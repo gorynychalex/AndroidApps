@@ -2,10 +2,15 @@ package ru.popovich.app09filesave;
 
 import android.content.Context;
 import android.os.Environment;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.JsonReader;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import org.json.JSONObject;
 
@@ -18,6 +23,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 
 /**
@@ -41,10 +49,22 @@ public class MainActivity extends AppCompatActivity {
     BufferedWriter bufferedWriter;
     FileWriter fileWriter;
 
+    // ЧТЕНИЕ ДАННЫХ
+    BufferedReader bufferedReader=null;
+    JsonReader jsonReader = null;
+
+
+    @BindView(R.id.edit_text) EditText editText;
+    @BindView(R.id.text_view) TextView textView;
+    @BindView(R.id.button_save) Button buttonSave;
+    @BindView(R.id.button_read) Button buttonRead;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ButterKnife.bind(this);
 
         Log.d(TAG,"context.getFileDir(): " + this.getFilesDir());
 
@@ -54,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Проверка наличия стандартной директории
         File dir = new File(Environment.getExternalStorageDirectory(), Environment.DIRECTORY_DOCUMENTS);
+
         Log.d(TAG,"Environment.DIRECTORY_DOCUMENTS is Exist: " + dir.exists());
         if(!dir.exists()) {
             dir.mkdir();
@@ -61,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Создание объекта файла
-        file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS.toLowerCase()), FILENAME);
+        file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), FILENAME);
 
         if(file.exists()) {
             Log.d(TAG, "FILE EXIST! getAbsolutefile(): " + String.valueOf(file.getAbsoluteFile()));
@@ -70,79 +91,91 @@ public class MainActivity extends AppCompatActivity {
             Log.d(TAG, "FILE IS NOT EXIST! getAbsolutefile(): " + String.valueOf(file.getAbsoluteFile()));
         }
 
+        buttonSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        // ЗАПИСЬ ДАННЫХ
-        try {
-            // Создание потока вывода
-            bufferedWriter = new BufferedWriter(new FileWriter(file,true));
-//            outputStream = openFileOutput(String.valueOf(file.getAbsoluteFile()), Context.MODE_APPEND);
-//            fileWriter = new FileWriter(file.getAbsoluteFile());
 
-            // Инициализация форматированного буферризованного объекта записи
-//            PrintWriter printWriter = new PrintWriter(outputStream);
 
-            // Создание JSON объекта и добавление данных
-            JSONObject jsonObject = new JSONObject();
-            jsonObject.put("first1","First field1");
-            jsonObject.put("second1","Second field1");
+                // ЗАПИСЬ ДАННЫХ
+                try {
+                    // Создание потока вывода
+                    bufferedWriter = new BufferedWriter(new FileWriter(file,true));
+        //            outputStream = openFileOutput(String.valueOf(file.getAbsoluteFile()), Context.MODE_APPEND);
+        //            fileWriter = new FileWriter(file.getAbsoluteFile());
 
-            // Запись данных в поток
-            bufferedWriter.write(jsonObject.toString());
-//            printWriter.write(jsonObject.toString());
-//            outputStream.write(jsonObject.toString().getBytes());
-//            fileWriter.write(jsonObject.toString());
+                    // Инициализация форматированного буферризованного объекта записи
+        //            PrintWriter printWriter = new PrintWriter(outputStream);
 
-//            fileWriter.flush();
+                    // Создание JSON объекта и добавление данных
+                    JSONObject jsonObject = new JSONObject();
+                    jsonObject.put("first1",editText.getText());
+//                    jsonObject.put("second1","Second field1");
+//
+                    // Запись данных в поток
+                    bufferedWriter.write(jsonObject.toString());
+        //            printWriter.write(jsonObject.toString());
+        //            outputStream.write(jsonObject.toString().getBytes());
+        //            fileWriter.write(jsonObject.toString());
 
-            Log.d(TAG, "File has just write!");
+        //            fileWriter.flush();
 
-        } catch (FileNotFoundException e){
-            Log.d(TAG, "FileNotFoundException");
-        } catch (Exception e){
-            e.printStackTrace();
-            Log.d(TAG, "Exception from file save");
-        } finally {
-            // Закрытие потока вывода
-            try {
-                bufferedWriter.close();
-//                fileWriter.close();
-//                outputStream.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+                    Log.w(TAG, "File has just write!");
+
+                } catch (FileNotFoundException e){
+                    Log.d(TAG, "FileNotFoundException");
+                } catch (Exception e){
+                    e.printStackTrace();
+                    Log.d(TAG, "Exception from file save");
+                } finally {
+                    // Закрытие потока вывода
+                    try {
+                        bufferedWriter.close();
+        //                fileWriter.close();
+        //                outputStream.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
-        }
+        });
 
 
-        // ЧТЕНИЕ ДАННЫХ
-        BufferedReader bufferedReader=null;
-        JsonReader jsonReader = null;
+        buttonRead.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    // Создание буфферизованного форматированного потока чтения из файла
+                    bufferedReader = new BufferedReader(new FileReader(file));
 
-        try {
-            // Создание буфферизованного форматированного потока чтения из файла
-            bufferedReader = new BufferedReader(new FileReader(file));
-
-            // Объект JSON чтения
+                    // Объект JSON чтения
             jsonReader = new JsonReader(bufferedReader);
             jsonReader.beginObject();
 
-            // Построчное чтение из файла
+                    // Построчное чтение из файла
             while (jsonReader.hasNext()){
                 Log.d(TAG,"Read:" + jsonReader.nextName() + " : " + jsonReader.nextString());
+                textView.setText(jsonReader.nextString());
             };
+//                    while (bufferedReader.ready())
+//                        textView.setText(bufferedReader.readLine());
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            Log.d(TAG, "FileNotFoundException");
-        } catch (IOException e) {
-            e.printStackTrace();
-            Log.d(TAG, "IOException");
-        } finally {
-            try {
-                jsonReader.close();
-                bufferedReader.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                    Log.d(TAG, "FileNotFoundException");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Log.d(TAG, "IOException");
+                } finally {
+                    try {
+//                        jsonReader.close();
+                        bufferedReader.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
             }
-        }
+        });
     }
 }

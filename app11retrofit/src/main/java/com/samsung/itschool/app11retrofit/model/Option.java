@@ -1,9 +1,19 @@
 package com.samsung.itschool.app11retrofit.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Option {
+
+    @SerializedName("id")
     private long id;
+
+    @SerializedName("text")
     private String text;
+
+    @SerializedName("correct")
     private boolean correct;
+
+    @SerializedName("user_answer")
     private boolean userAnswer;
 
     public Option(){}

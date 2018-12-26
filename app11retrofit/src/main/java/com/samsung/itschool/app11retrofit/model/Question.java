@@ -1,14 +1,28 @@
 package com.samsung.itschool.app11retrofit.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.Date;
 import java.util.List;
 
 public class Question {
+
+    @SerializedName("id")
     private int id;
+
+    @SerializedName("text")
     private String text;
+
+    @SerializedName("options")
     private List<Option> options;
+
+    @SerializedName("starttime")
     private Date startTime;
+
+    @SerializedName("stoptime")
     private Date stopTime;
+
+    @SerializedName("result")
     private byte result=0;
 
     public Question(){}
