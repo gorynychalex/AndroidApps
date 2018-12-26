@@ -6,7 +6,7 @@ android {
 
 
     defaultConfig {
-        applicationId "ru.popovich.app09filesave"
+        applicationId "ru.popovich.app10authgoogle"
         minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
@@ -31,10 +31,11 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
-
     androidTestImplementation 'com.android.support.test:runner:0.5'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:2.2.2'
 
     compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    compile 'com.google.android.gms:play-services-auth:11.8.0'
 }

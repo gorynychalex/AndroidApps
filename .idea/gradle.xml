@@ -18,6 +18,11 @@
             <option value="$PROJECT_DIR$/app07sqlite" />
             <option value="$PROJECT_DIR$/app08services" />
             <option value="$PROJECT_DIR$/app09filesave" />
+            <option value="$PROJECT_DIR$/app10authfirebase" />
+            <option value="$PROJECT_DIR$/app10authgoogle" />
+            <option value="$PROJECT_DIR$/app10authloginsimple" />
+            <option value="$PROJECT_DIR$/app11retrofit" />
+            <option value="$PROJECT_DIR$/app12fragment" />
             <option value="$PROJECT_DIR$/appmeasure" />
           </set>
         </option>
