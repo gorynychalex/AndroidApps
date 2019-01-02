@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(R.string.app_name);
+                .requestIdToken(String.valueOf(R.string.app_name))
                 .requestEmail()
                 .build();
 
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onActivityResult(requestCode, resultCode, data);
 
         if(requestCode == RC_SIGN_IN){
-            Task<GoogleSignInAccount>
+
         }
     }
 
