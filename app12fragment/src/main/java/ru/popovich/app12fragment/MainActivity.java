@@ -11,7 +11,7 @@ import android.widget.FrameLayout;
 public class MainActivity extends AppCompatActivity {
 
     // Объявление фрагментов
-    Fragment fragment01, fragment02;
+    public static Fragment fragment01, fragment02;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,10 @@ public class MainActivity extends AppCompatActivity {
         // Подтверждение транзакции
         fragmentTransaction.commit();
 
+        // Инициализация объекта - контейнера фрагментов
         FrameLayout frameLayout = findViewById(R.id.frame_layout);
+
+        // Вызов слушателя на нажатие фрагмента
         frameLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction1.commit();
             }
         });
+
+
 
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -10,9 +10,16 @@
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Fragment1"
+        android:layout_height="wrap_content"
+        android:text="Фрагмент 1"
+        android:textAlignment="center"
         android:textColor="#FFF"
-        android:textSize="24sp" />
+        android:textSize="30sp" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/fragment01_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Сменить фрагмент" />
+
+</LinearLayout>
