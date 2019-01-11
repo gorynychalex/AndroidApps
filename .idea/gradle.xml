@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app01helloworld" />
+            <option value="$PROJECT_DIR$/app01softdraw" />
             <option value="$PROJECT_DIR$/app021calculate" />
             <option value="$PROJECT_DIR$/app02calculate" />
             <option value="$PROJECT_DIR$/app03intent" />
@@ -23,6 +24,7 @@
             <option value="$PROJECT_DIR$/app10authloginsimple" />
             <option value="$PROJECT_DIR$/app11retrofit" />
             <option value="$PROJECT_DIR$/app12fragment" />
+            <option value="$PROJECT_DIR$/app13draw" />
             <option value="$PROJECT_DIR$/appmeasure" />
           </set>
         </option>
