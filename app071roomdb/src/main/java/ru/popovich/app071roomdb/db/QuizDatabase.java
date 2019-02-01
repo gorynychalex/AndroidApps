@@ -1,5 +1,7 @@
 package ru.popovich.app071roomdb.db;
 
+// Простая реализация абстрактного класса базы данных
+
 import androidx.room.Database;
 import androidx.room.RoomDatabase;
 import ru.popovich.app071roomdb.db.dao.QuizDao;

@@ -1,7 +1,8 @@
 package ru.popovich.app071roomdb.db.dao;
 
-import java.util.List;
+// Интерфейс запросов к базе данных
 
+import java.util.List;
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;

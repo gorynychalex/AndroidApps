@@ -1,6 +1,6 @@
 package ru.popovich.app071roomdb.db.model;
 
-// Сущность для теста
+// Модель-Сущность теста
 
 import java.util.Date;
 

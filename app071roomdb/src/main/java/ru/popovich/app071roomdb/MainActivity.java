@@ -1,5 +1,7 @@
 package ru.popovich.app071roomdb;
 
+// Простая реализация Room Persistence
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
@@ -15,6 +17,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
+
     // Объявление переменной для базы данных
     QuizDatabase database;
 
@@ -41,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
 
             // Внесение данных списка в базу данных
             database.quizDao().insertAll(quizzes);
-
         }
 
         // Вывод в лог данных
