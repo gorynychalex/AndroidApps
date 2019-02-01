@@ -1,16 +1,12 @@
 package com.samsung.itschool.app11retrofit;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.samsung.itschool.app11retrofit.model.Option;
 import com.samsung.itschool.app11retrofit.model.Question;
 import com.samsung.itschool.app11retrofit.model.Quiz;
-import com.samsung.itschool.app11retrofit.model.User;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -2,7 +2,7 @@ package com.example.app04lifecycle;
 
 // https://developer.android.com/guide/components/activities.html#Lifecycle
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 

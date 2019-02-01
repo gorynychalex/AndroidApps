@@ -1,9 +1,8 @@
 package ru.popovich.app09filesave;
 
-import android.content.Context;
 import android.os.Environment;
-import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.JsonReader;
 import android.util.Log;
@@ -22,7 +21,6 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

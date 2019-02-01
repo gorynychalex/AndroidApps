@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/app04lifecycle/app04lifecycle.iml" filepath="$PROJECT_DIR$/app04lifecycle/app04lifecycle.iml" />
       <module fileurl="file://$PROJECT_DIR$/app05listview/app05listview.iml" filepath="$PROJECT_DIR$/app05listview/app05listview.iml" />
       <module fileurl="file://$PROJECT_DIR$/app06sharedpreferences/app06sharedpreferences.iml" filepath="$PROJECT_DIR$/app06sharedpreferences/app06sharedpreferences.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app071roomdb/app071roomdb.iml" filepath="$PROJECT_DIR$/app071roomdb/app071roomdb.iml" />
       <module fileurl="file://$PROJECT_DIR$/app07sqlite/app07sqlite.iml" filepath="$PROJECT_DIR$/app07sqlite/app07sqlite.iml" />
       <module fileurl="file://$PROJECT_DIR$/app08services/app08services.iml" filepath="$PROJECT_DIR$/app08services/app08services.iml" />
       <module fileurl="file://$PROJECT_DIR$/app09filesave/app09filesave.iml" filepath="$PROJECT_DIR$/app09filesave/app09filesave.iml" />
