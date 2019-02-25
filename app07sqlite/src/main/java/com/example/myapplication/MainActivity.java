@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         }
 //        cursor.close();
 
+
         simpleCursorAdapter = new SimpleCursorAdapter(this,
                 R.layout.list_item, cursor,
                 new String[]{DBHelper.TABLE_QUIZ_NAME}, new int[]{R.id.item},0);
